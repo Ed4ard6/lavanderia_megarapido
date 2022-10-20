@@ -1,6 +1,5 @@
 
 <?php include ('menu.php'); ?>
-    <!--  hugo-->
     <div class="contenedor_principal">
         <img align="left" class="img_nosotros" src="img/nosotros.jpg"></img><br><br>
         <div class="texto_nosotros">
