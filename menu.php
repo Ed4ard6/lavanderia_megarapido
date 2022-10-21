@@ -27,7 +27,6 @@
                 <a class="dropbtn">Nosotros</a>
                 <div class="dropdown-content">
                     <a href="acerda_de.php">Quienes somos</a>
-                    <a href="#">Historia</a>
                     <a href="ubicanos.php">Ubicanos</a>
                 </div>
             </li>
