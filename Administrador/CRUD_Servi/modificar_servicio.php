@@ -2,7 +2,7 @@
 include("../../conecta.php");
 
 session_start();
-if (!isset($_SESSION['usuario'])) {
+if (!isset($_SESSION['admin'])) {
     echo "hola";
     # code...
     echo ' 

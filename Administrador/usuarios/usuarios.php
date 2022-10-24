@@ -33,7 +33,7 @@ include("menu_admin.php");
                     <th>Estado</th>
                 </thead>
                 <?php
-                    $sql="SELECT * from usuarios WHERE  estado = 'Activo'";
+                    $sql="SELECT * from usuarios WHERE  estado = 'Activo' ORDER BY nombres asc";
                     $result=mysqli_query($conn,$sql);
 
                     while($mostrar=mysqli_fetch_array($result)){

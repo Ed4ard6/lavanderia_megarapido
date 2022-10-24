@@ -1,6 +1,6 @@
 <?php
 session_start();
-if (!isset($_SESSION['usuario'])) {
+if (!isset($_SESSION['admin'])) {
     # code...
     echo ' 
     <script>
@@ -14,7 +14,7 @@ if (!isset($_SESSION['usuario'])) {
     //die();
 }
 
-include('conecta_factura.php');
+include('../conecta.php');
 $id_serv = $_REQUEST['id_ser'];
 
 $sql = "DELETE FROM det_factura WHERE id = $id_serv";

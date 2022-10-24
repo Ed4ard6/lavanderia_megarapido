@@ -24,7 +24,7 @@ if (mysqli_num_rows($result) > 0) {
         }elseif ($usuario == $row["usuario"] AND $contraseña == $row["contraseña"] AND $tipo_usuario == "A" ) {
           # code...
           session_start();
-            $_SESSION['usuario'] = $usuario;
+            $_SESSION['admin'] = $usuario;
             $_SESSION['contraseña'] = $contraseña;
             $_SESSION['documento'] = $row['documento'];
             
