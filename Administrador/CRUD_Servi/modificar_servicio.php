@@ -2,7 +2,7 @@
 include("../../conecta.php");
 
 session_start();
-if (!isset($_SESSION['usuario'])) {
+if (!isset($_SESSION['admin'])) {
     echo "hola";
     # code...
     echo ' 
@@ -25,13 +25,14 @@ if (!isset($_SESSION['usuario'])) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lavanderia Mega Rapido</title>
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <script src="https://kit.fontawesome.com/eb496ab1a0.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../../css/menu.css">
     <link rel="stylesheet" href="../../css/estilos.css">
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="../../css/pie_pagina.css">
     <link rel="shortcut icon" href="../../img/icono.png">
+    <title>Lavanderia Mega Rapido</title>
 </head>
 <body>
 

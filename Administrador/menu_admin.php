@@ -1,6 +1,6 @@
 <?php
 session_start();
-if (!isset($_SESSION['usuario'])) {
+if (!isset($_SESSION['admin'])) {
     # code...
     echo ' 
     <script>
@@ -15,6 +15,27 @@ if (!isset($_SESSION['usuario'])) {
     $_SESSION['documento'];
     $documento = $_SESSION['documento'];
 }
+
+
+date_default_timezone_set('America/Bogota');
+
+$fecha = date("Y-m-d");
+$mes =  date("m");
+$dia =  date("d");
+$dia_max =  date("d")+5;
+$año =  date("Y");
+if ($mes < 10){
+    $mes_max = "0$mes";
+
+}
+if($dia < 5){
+    $dia = $dia - 5;
+    $dia = "0$dia";
+} else {
+    $dia = $dia - 5;
+}
+$mes_min_recibido = "$año-$mes-$dia";
+$mes_max_entrega = "$año-$mes-$dia_max";
 
 ?>
 

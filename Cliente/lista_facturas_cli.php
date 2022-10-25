@@ -59,7 +59,7 @@ if (!isset($_SESSION['usuario'])) {
        include('../conecta.php');
        
 
-       $sql = "SELECT * FROM factura WHERE info_cliente_id  = $documento; ";
+       $sql = "SELECT * FROM factura WHERE info_cliente_id  = $documento ORDER BY id_factura desc; ";
        $result = mysqli_query($conn, $sql);
        
        if (mysqli_num_rows($result) > 0) {

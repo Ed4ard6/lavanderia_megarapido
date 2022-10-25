@@ -1,7 +1,7 @@
 
 .menu{
     background-color: rgb(26, 62, 102);
-    height: 75px;
+    /* height: 75px; */
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -10,6 +10,7 @@
     box-shadow: 5px 0 10px rgba(0, 0, 0, .6);
     position: sticky;
     top: 0px;
+    padding: 20px 0px 20px 0px;
     
 }
 .titulo{
