@@ -20,13 +20,22 @@ if (!isset($_SESSION['admin'])) {
 date_default_timezone_set('America/Bogota');
 
 $fecha = date("Y-m-d");
-$mes_max =  date("m")+1;
+$mes =  date("m");
 $dia =  date("d");
+$dia_max =  date("d")+5;
 $año =  date("Y");
-$mes_min = date("m")-1;
-$mes_min_recibido = "$año-$mes_min-$dia";
-$mes_min_entrega = "$año-$mes_min-$dia";
-$mes_max_entrega = "$año-$mes_max-$dia";
+if ($mes < 10){
+    $mes_max = "0$mes";
+
+}
+if($dia < 5){
+    $dia = $dia - 5;
+    $dia = "0$dia";
+} else {
+    $dia = $dia - 5;
+}
+$mes_min_recibido = "$año-$mes-$dia";
+$mes_max_entrega = "$año-$mes-$dia_max";
 
 ?>
 
