@@ -14,7 +14,7 @@ if ($contraseña !== $c_contraseña) {
   echo ' 
     <script>
     alert("Las contraseñas no coinciden");
-    window.location = "registrarse.html";
+    window.location = "registrarse.php";
     </script>
     ';
 }
@@ -31,7 +31,7 @@ if (mysqli_num_rows($result) > 0) {
   echo ' 
     <script>
     alert("Nombre de usuario en uso \nPor favor utilice otro");
-    window.location = "registrarse.html";
+    window.location = "registrarse.php";
     </script>
     ';
 } 
@@ -44,7 +44,7 @@ if (mysqli_num_rows($result) > 0) {
   echo ' 
     <script>
     alert("Ya se encuentra alguien registrado con ese numero de documento \n                                   Por favor inicie sesion");
-    window.location = "login1.html";
+    window.location = "login1.php";
     </script>
     ';
 } 
@@ -56,7 +56,7 @@ if (mysqli_query($conn, $sql)) {
     echo '
     <script>
     alert("Registro exitoso");
-    window.location = "login.html";
+    window.location = "login1.php";
     </script>
     
     ';

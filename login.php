@@ -12,23 +12,34 @@ $result = mysqli_query($conn, $sql);
 if (mysqli_num_rows($result) > 0) {
     // output data of each row
     while($row = mysqli_fetch_assoc($result)) {
+      session_start();
 
         if ($usuario == $row["usuario"] AND $contraseña == $row["contraseña"] AND $tipo_usuario == "C" ) {
             # code...
-            session_start();
+            
             $_SESSION['usuario'] = $usuario;
             $_SESSION['contraseña'] = $contraseña;
             $_SESSION['documento'] = $row['documento'];
             
-            header("Location: Cliente/mi_cuenta_cli.php");   
+            echo ' 
+            <script>
+            window.location = "Cliente/mi_cuenta_cli.php";
+            </script>
+            ';
+
         }elseif ($usuario == $row["usuario"] AND $contraseña == $row["contraseña"] AND $tipo_usuario == "A" ) {
           # code...
-          session_start();
+          
             $_SESSION['admin'] = $usuario;
             $_SESSION['contraseña'] = $contraseña;
             $_SESSION['documento'] = $row['documento'];
             
-            header("Location: Administrador/mi_cuenta_admi.php"); 
+            echo ' 
+            <script>
+            window.location = "Administrador/mi_cuenta_admi.php";
+            </script>
+            ';
+
         }
     }
   } else {
