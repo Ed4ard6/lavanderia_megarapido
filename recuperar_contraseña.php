@@ -1,5 +1,5 @@
 <?php
-    include('conectar.php');
+    include('conecta.php');
     if ($_POST) {
         $documento = $_POST['documento'];
         $correo = $_POST['email'];
