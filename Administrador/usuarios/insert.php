@@ -54,7 +54,7 @@
     ?>
     <div class="contenedor">
         <h2>Nuevo usuario</h2>
-        <form method="post">
+        <form action="insert.php" method="post">
         <div class="form-group">
                     <label for="">Documento</label>
                     <label for="">Nombre</label>

@@ -1,9 +1,9 @@
 <?php 
-
+session_start();
 include("../../conecta.php");
 
 
-session_start();
+
 if (!isset($_SESSION['admin'])) {
     # code...
     echo ' 

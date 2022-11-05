@@ -61,6 +61,5 @@ include("menu_admin.php");
         </div>
     </div>
     </div>
-    <?php
-
-?>
+    
+<?php include('pie_pagina.php'); ?>
