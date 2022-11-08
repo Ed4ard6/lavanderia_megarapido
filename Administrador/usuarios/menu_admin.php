@@ -1,7 +1,7 @@
 <?php
-
-include('../../conecta.php');
 session_start();
+include('../../conecta.php');
+
 if (!isset($_SESSION['admin'])) {
     # code...
     echo ' 
