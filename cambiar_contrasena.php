@@ -2,7 +2,7 @@
     include ('conecta.php');
     $nueva_contraseña = $_POST['nueva_contraseña'];
     $confiram_contraseña = $_POST['confiram_contraseña'];
-    $documento = $_POST['documento'];
+    $documento = $_REQUEST['documento'];
 
 
     $sql = "SELECT  documento FROM usuarios WHERE  documento = '$documento'";
@@ -15,14 +15,14 @@
                 echo ' 
                 <script>
                 alert("Contraseña actualizada correctamente");
-                window.location = "recuperar_contraseñas.php";
+                window.location = "login1.php";
                 </script>
                 ';
             }else{
                 echo ' 
                 <script>
                 alert("Las  contrsaeñas no coinciden");
-                window.location = "recuperar_contraseñas.php";
+                window.location = "recuperar_contrasenas.php";
                 </script>
                 ';
             }
@@ -30,7 +30,7 @@
             echo ' 
             <script>
             alert("El numero de documento no es Valido");
-            window.location = "recuperar_contraseñas.php";
+            window.location = "recuperar_contrasenas.php";
             </script>
             ';
         }

@@ -6,7 +6,8 @@ $usuario = $_POST['usuario'];
 $contraseña = $_POST['password'];
 $tipo_usuario = $_POST['tipo_de_usuario'];
 
-$sql = "SELECT usuario, contraseña, documento, tipo_usuario FROM usuarios WHERE usuario = '$usuario' AND contraseña = '$contraseña' AND tipo_usuario = '$tipo_usuario'";
+$sql = "SELECT usuario, contraseña, documento, tipo_usuario FROM usuarios WHERE usuario = '$usuario' AND contraseña = '$contraseña' 
+AND tipo_usuario = '$tipo_usuario' AND estado = 'Activo'";
 $result = mysqli_query($conn, $sql);
 
 if (mysqli_num_rows($result) > 0) {
