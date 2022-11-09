@@ -135,8 +135,8 @@
                 <td><?php echo $fila['documento']; ?></td>
                 <td><?php echo $fila['nombres']; ?></td>
                 <td><?php echo $fila['apellidos']; ?></td>
-                <td><a href="editar_factura.php?id=<?php echo $fila['id_factura']; ?>" class="boton_editar">Editar</a></td>
-                <td><a href="confirma_eli_factura.php?id_factura=<?php echo $fila['id_factura']; ?>" class="boton_eliminar">Eliminar</a></td>
+                <td><a href="editar_factura.php?id=<?php echo $num_factura; ?>" class="boton_editar">Editar</a></td>
+                <td><a href="confirma_eli_factura.php?id_factura=<?php echo $num_factura; ?>" class="boton_eliminar">Eliminar</a></td>
                 <td><a href="ver_det_fac_adm.php?factura=<?php echo $num_factura; ?>"><img src="img_fac/ver_detalles_icono.webp" class="icono_ver_adm"></a></td>
                 </tr>
                 <?php
