@@ -8,7 +8,7 @@ if (!isset($_SESSION['usuario'])) {
     window.location = "../login1.php";
     </script>
     ';
-    
+
     session_destroy();
 }
 
@@ -16,6 +16,7 @@ if (!isset($_SESSION['usuario'])) {
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -29,84 +30,86 @@ if (!isset($_SESSION['usuario'])) {
     <link rel="shortcut icon" href="../img/icono.png">
     <title>Lavandería Mega Rápido</title>
 </head>
+
 <body>
-    
+
     <!-- Inicio de Codigo de Menu Cliente-->
-        <nav class="menu">
-            <label class="titulo">Lavanderia Mega Rapido</label>
-            <ul>
-                <li><a href="mi_cuenta_cli.php" >Mi Cuenta</a></li>
-                <li><a href="Servicios_Cliente.php">Solicitar Servicio</a></li>
-                <li><a href="lista_facturas_cli.php" class="activo">Facturas</a></li>
-                <li><a href="cerrar_sesion.php" >Cerrar Sesión</a></li>
-            </ul>
-        </nav>
-        <!--Fin de codigo de menu Cliente-->
-        <div class="Contenedor_principal"> 
+    <nav class="menu">
+        <label class="titulo">Lavanderia Mega Rapido</label>
+        <ul>
+            <li><a href="mi_cuenta_cli.php">Mi Cuenta</a></li>
+            <li><a href="Servicios_Cliente.php">Solicitar Servicio</a></li>
+            <li><a href="lista_facturas_cli.php" class="activo">Facturas</a></li>
+            <li><a href="cerrar_sesion.php">Cerrar Sesión</a></li>
+        </ul>
+    </nav>
+    <!--Fin de codigo de menu Cliente-->
+    <div class="Contenedor_principal">
         <div class="caja_det_fac_cli">
             <!-- Inicio Mi cuenta -->
-        
-        <h1 class="titulo_lista_fact">Listado de tus facturas</h1>
-        
-        <div class="caja_facturas_cli"><!-- ###################### caja de facturas -->
-        <?php
-       
-       $_SESSION['documento'];
-       $documento = $_SESSION['documento'];
 
-       include('../conecta.php');
-       
+            <h1 class="titulo_lista_fact">Listado de tus facturas</h1>
 
-       $sql = "SELECT * FROM factura WHERE info_cliente_id  = $documento ORDER BY id_factura desc; ";
-       $result = mysqli_query($conn, $sql);
-       
-       if (mysqli_num_rows($result) > 0) {
-           ?>
-           <table class="table_det_fact">
-               <tr>
-                   <th class="th_det_fact">Factura #</th>
-                   <th class="th_det_fact">Fecha Recibido</th>
-                   <th class="th_det_fact">Fecha Entrega</th>
-                   <th class="th_det_fact">Detalles</th>
-               </tr>
-           
-           <?php
-           while($row = mysqli_fetch_assoc($result)) {
-           //echo $row['id_factura']. " - - ". $row['fecha_recibido']." - - ".$row['fecha_entregado'];
-           $numero_fac = $row['id_factura'];
-           $recibido = $row['fecha_recibido'];
-           $entrega = $row['fecha_entregado'];
-           ?>
-           <tr>
-               <td><?php echo $numero_fac ; ?></td>
-               <td><?php echo $recibido ; ?></td>
-               <td><?php echo $entrega ; ?></td>
-               <form action="ver_detalles_factura_cli.php?factura=<?php echo $numero_fac; ?>" method="post">
-               <td><input style="border: solid black 2px ; border-radius:25px" type="image" src="icono_ver.png" height="35px" width="35px"></td>
-               </form>
-           </tr>
-           <?php
+            <div class="caja_facturas_cli">
+                <!-- ###################### caja de facturas -->
+                <?php
+
+                $_SESSION['documento'];
+                $documento = $_SESSION['documento'];
+
+                include('../conecta.php');
 
 
-           
-           
-           }
-       } else {
-           ?>
-            <div class="sin_fac">
-            <h1>Aun no tienes facturas</h1>
-            <a href="Servicios_Cliente.php">Solicita un servicio</a>
+                $sql = "SELECT * FROM factura WHERE info_cliente_id  = $documento ORDER BY id_factura desc; ";
+                $result = mysqli_query($conn, $sql);
+
+                if (mysqli_num_rows($result) > 0) {
+                ?>
+                    <table class="table_det_fact">
+                        <tr>
+                            <th class="th_det_fact">Factura #</th>
+                            <th class="th_det_fact">Fecha Recibido</th>
+                            <th class="th_det_fact">Fecha Entrega</th>
+                            <th class="th_det_fact">Detalles</th>
+                        </tr>
+
+                        <?php
+                        while ($row = mysqli_fetch_assoc($result)) {
+                            //echo $row['id_factura']. " - - ". $row['fecha_recibido']." - - ".$row['fecha_entregado'];
+                            $numero_fac = $row['id_factura'];
+                            $recibido = $row['fecha_recibido'];
+                            $entrega = $row['fecha_entregado'];
+                        ?>
+                            <tr>
+                                <td><?php echo $numero_fac; ?></td>
+                                <td><?php echo $recibido; ?></td>
+                                <td><?php echo $entrega; ?></td>
+                                <form action="ver_detalles_factura_cli.php?factura=<?php echo $numero_fac; ?>" method="post">
+                                    <td><input style="border: solid black 2px ; border-radius:25px" type="image" src="icono_ver.png" height="35px" width="35px"></td>
+                                </form>
+                            </tr>
+                        <?php
+
+
+
+
+                        }
+                    } else {
+                        ?>
+                        <div class="sin_fac">
+                            <h1>Aun no tienes facturas</h1>
+                            <a href="Servicios_Cliente.php">Solicita un servicio</a>
+                        </div>
+                    <?php
+                    }
+                    echo "</table>";
+                    mysqli_close($conn);
+
+
+
+                    ?>
             </div>
-           <?php
-       }
-       echo "</table>";
-       mysqli_close($conn);
-   
-       
-       
-   ?>
-        </div>
-<!-- Fin mi cuenta -->
+            <!-- Fin mi cuenta -->
         </div>
 
     </div>
@@ -142,4 +145,5 @@ if (!isset($_SESSION['usuario'])) {
     <!--Fin de pie de pagina-->
 
 </body>
+
 </html>

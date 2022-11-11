@@ -2,39 +2,39 @@
 session_start();
 if (!isset($_SESSION['admin'])) {
 
-    ?><script>
-    alert("Por favor debes iniciar sesion");
-    window.location = "../login1.php";
+?><script>
+        alert("Por favor debes iniciar sesion");
+        window.location = "../login1.php";
     </script><?php
-    
-    session_destroy();
-}
+
+                session_destroy();
+            }
 
 
-date_default_timezone_set('America/Bogota');
+            date_default_timezone_set('America/Bogota');
 
-$fecha = date("Y-m-d");
-$mes =  date("m");
-$dia =  date("d");
-$dia_max =  date("d")+5;
-$año =  date("Y");
-if ($mes < 10){
-    $mes_max = "0$mes";
+            $fecha = date("Y-m-d");
+            $mes =  date("m");
+            $dia =  date("d");
+            $dia_max =  date("d") + 5;
+            $año =  date("Y");
+            if ($mes < 10) {
+                $mes_max = "0$mes";
+            }
+            if ($dia < 5) {
+                $dia = $dia - 5;
+                $dia = "0$dia";
+            } else {
+                $dia = $dia - 5;
+            }
+            $mes_min_recibido = "$año-$mes-$dia";
+            $mes_max_entrega = "$año-$mes-$dia_max";
 
-}
-if($dia < 5){
-    $dia = $dia - 5;
-    $dia = "0$dia";
-} else {
-    $dia = $dia - 5;
-}
-$mes_min_recibido = "$año-$mes-$dia";
-$mes_max_entrega = "$año-$mes-$dia_max";
-
-?>
+                ?>
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -48,16 +48,17 @@ $mes_max_entrega = "$año-$mes-$dia_max";
     <link rel="stylesheet" href="style.css">
     <title>Lavandería Mega Rápido</title>
 </head>
+
 <body>
-    
+
     <!-- Inicio de Codigo de Menu Cliente-->
     <nav class="menu">
-            <label class="titulo">Lavanderia Mega Rapido</label>
-            <ul>
-                <li><a href="mi_cuenta_admi.php">Mi Cuenta</a></li>
-                <li><a href="usuarios/usuarios.php">Usuarios</a></li>
-                <li><a href="CRUD_Fact/listafacturas.php">Factura</a></li>
-                <li><a href="CRUD_Servi/modificar_servicio.php">Servicio</a></li>
-                <li><a href="cerrar_sesion.php" >Cerrar Sesión</a></li>
-            </ul>
-        </nav>
+        <label class="titulo">Lavanderia Mega Rapido</label>
+        <ul>
+            <li><a href="mi_cuenta_admi.php">Mi Cuenta</a></li>
+            <li><a href="usuarios/usuarios.php">Usuarios</a></li>
+            <li><a href="CRUD_Fact/listafacturas.php">Factura</a></li>
+            <li><a href="CRUD_Servi/modificar_servicio.php">Servicio</a></li>
+            <li><a href="cerrar_sesion.php">Cerrar Sesión</a></li>
+        </ul>
+    </nav>

@@ -13,4 +13,3 @@
      mail($destinatario, "Solicitud de Servicio de",$mensaje_completo, $header);
      echo "<script>alert('Servicio solicitado con exito')</script>";
      echo "<script> setTimeout(\"location.href='Servicios_Cliente.php'\",1000)</script>";
-?>

@@ -1,18 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
-    
+
 </body>
+
 </html>
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -24,21 +28,22 @@
     <link rel="shortcut icon" href="../img/icono.png">
     <title>Lavandería Mega Rápido</title>
 </head>
+
 <body>
-    
+
     <!-- Inicio de Codigo de Menu Cliente-->
-        <nav class="menu">
-            <label class="titulo">Lavanderia Mega Rapido</label>
-            <ul>
-                <li><a href="mi_cuenta_cli.php" class="activo">Mi Cuenta</a></li>
-                <li><a href="Servicios_Cliente.html">Solicitar Servicio</a></li>
-                <li><a href="cerrar_sesion.php" >Cerrar Sesión</a></li>
-            </ul>
-        </nav>
-        <!--Fin de codigo de menu Cliente-->
-        <div class="Contenedor_principal"> 
+    <nav class="menu">
+        <label class="titulo">Lavanderia Mega Rapido</label>
+        <ul>
+            <li><a href="mi_cuenta_cli.php" class="activo">Mi Cuenta</a></li>
+            <li><a href="Servicios_Cliente.html">Solicitar Servicio</a></li>
+            <li><a href="cerrar_sesion.php">Cerrar Sesión</a></li>
+        </ul>
+    </nav>
+    <!--Fin de codigo de menu Cliente-->
+    <div class="Contenedor_principal">
         <!-- Inicio Mi cuenta -->
-    
+
 
         <!-- Fin mi cuenta -->
 
@@ -54,8 +59,8 @@
             <div class="burbuja"></div>
             <div class="burbuja"></div>
             <div class="burbuja"></div>
-         </div>
-         <!--Fin de Borbujas de fondo-->
+        </div>
+        <!--Fin de Borbujas de fondo-->
     </div>
     </div>
     <!--Inicio de pie de pagina-->
@@ -89,4 +94,5 @@
     <!--Fin de pie de pagina-->
 
 </body>
+
 </html>

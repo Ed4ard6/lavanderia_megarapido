@@ -34,7 +34,7 @@ if (mysqli_num_rows($result) > 0) {
     window.location = "registrarse.php";
     </script>
     ';
-} 
+}
 
 $sql = "SELECT documento FROM usuarios WHERE documento = $num_cedula;;";
 $result = mysqli_query($conn, $sql);
@@ -47,13 +47,13 @@ if (mysqli_num_rows($result) > 0) {
     window.location = "login1.php";
     </script>
     ';
-} 
+}
 
 $sql = "INSERT INTO usuarios(documento, nombres, apellidos, usuario, contraseña, correo, num_celular, direccion, tipo_usuario)
 VALUES ($num_cedula,'$nombre','$apellido','$usuario','$contraseña','$correo',$num_celular,'$direccion','C');";
 
 if (mysqli_query($conn, $sql)) {
-    echo '
+  echo '
     <script>
     alert("Registro exitoso");
     window.location = "login1.php";
@@ -62,6 +62,3 @@ if (mysqli_query($conn, $sql)) {
     ';
 }
 mysqli_close($conn);
-
-
-?>

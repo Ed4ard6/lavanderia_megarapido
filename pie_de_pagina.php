@@ -1,17 +1,16 @@
-
-    <div class="burbujas">
-            <div class="burbuja"></div>
-            <div class="burbuja"></div>
-            <div class="burbuja"></div>
-            <div class="burbuja"></div>
-            <div class="burbuja"></div>
-            <div class="burbuja"></div>
-            <div class="burbuja"></div>
-            <div class="burbuja"></div>
-            <div class="burbuja"></div>
-            <div class="burbuja"></div>
-         </div>
-         <!--Fin de Borbujas de fondo-->
+<div class="burbujas">
+    <div class="burbuja"></div>
+    <div class="burbuja"></div>
+    <div class="burbuja"></div>
+    <div class="burbuja"></div>
+    <div class="burbuja"></div>
+    <div class="burbuja"></div>
+    <div class="burbuja"></div>
+    <div class="burbuja"></div>
+    <div class="burbuja"></div>
+    <div class="burbuja"></div>
+</div>
+<!--Fin de Borbujas de fondo-->
 <!--Inicio de pie de pagina-->
 <footer class="pie-pagina">
     <div class="grupo-1">
@@ -42,4 +41,5 @@
 </footer>
 <!--Fin de pie de pagina-->
 </body>
+
 </html>

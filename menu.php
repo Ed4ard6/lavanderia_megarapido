@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,11 +13,12 @@
     <link rel="shortcut icon" href="img/icono.png">
     <link rel="stylesheet" href="css/carrusel.css">
     <link rel="stylesheet" href="css/estilos_recuperar.css">
-    <script defer src="js/app.js" ></script>
+    <script defer src="js/app.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js"></script>
-    
+
     <title>Lavandería Mega Rápido</title>
 </head>
+
 <body>
     <!-- Inicio de Codigo de Menu-->
     <nav class="menu">
