@@ -8,10 +8,8 @@ if (!isset($_SESSION['usuario'])) {
     window.location = "../login1.php";
     </script>
     ';
-    
+
     session_destroy();
-    //header("location:../login.html");
-    //die();
 }
 
 
@@ -19,6 +17,7 @@ if (!isset($_SESSION['usuario'])) {
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -32,88 +31,89 @@ if (!isset($_SESSION['usuario'])) {
     <link rel="shortcut icon" href="../img/icono.png">
     <title>Lavandería Mega Rápido</title>
 </head>
+
 <body>
-    
+
     <!-- Inicio de Codigo de Menu Cliente-->
-        <nav class="menu">
-            <label class="titulo">Lavanderia Mega Rapido</label>
-            <ul>
-                <li><a href="mi_cuenta_cli.php" class="activo">Mi Cuenta</a></li>
-                <li><a href="Servicios_Cliente.php">Solicitar Servicio</a></li>
-                <li><a href="lista_facturas_cli.php">Facturas</a></li>
-                <li><a href="cerrar_sesion.php" >Cerrar Sesión</a></li>
-            </ul>
-        </nav>
-        <!--Inicio de codigo de menu Cliente-->
-        <div class="Contenedor_principal"> 
+    <nav class="menu">
+        <label class="titulo">Lavanderia Mega Rapido</label>
+        <ul>
+            <li><a href="mi_cuenta_cli.php" class="activo">Mi Cuenta</a></li>
+            <li><a href="Servicios_Cliente.php">Solicitar Servicio</a></li>
+            <li><a href="lista_facturas_cli.php">Facturas</a></li>
+            <li><a href="cerrar_sesion.php">Cerrar Sesión</a></li>
+        </ul>
+    </nav>
+    <!--Inicio de codigo de menu Cliente-->
+    <div class="Contenedor_principal">
         <!-- Inicio Mi cuenta -->
 
         <!--Inicio  Bienvenido usuario-->
-    <?php
-               
-    $_SESSION['documento'];
-    $documento = $_SESSION['documento'];
+        <?php
 
-    require '../conecta.php';
+        $_SESSION['documento'];
+        $documento = $_SESSION['documento'];
 
-    $sql = "SELECT * FROM usuarios WHERE documento = '$documento'; ";
-    $result = mysqli_query($conn, $sql);
-               
-    if (mysqli_num_rows($result) > 0) {
-        // output data of each row
-        while($row = mysqli_fetch_assoc($result)) {
-        $name = $row["nombres"];
-        $last_name = $row["apellidos"];
-        $email = $row["correo"];
-        $celular = $row["num_celular"];
-        $direccion = $row["direccion"];
-        $usuario = $row["usuario"];
-        $clave = $row["contraseña"];
+        require '../conecta.php';
 
+        $sql = "SELECT * FROM usuarios WHERE documento = '$documento'; ";
+        $result = mysqli_query($conn, $sql);
+
+        if (mysqli_num_rows($result) > 0) {
+            // output data of each row
+            while ($row = mysqli_fetch_assoc($result)) {
+                $name = $row["nombres"];
+                $last_name = $row["apellidos"];
+                $email = $row["correo"];
+                $celular = $row["num_celular"];
+                $direccion = $row["direccion"];
+                $usuario = $row["usuario"];
+                $clave = $row["contraseña"];
+            }
+        } else {
+            echo "Error en el if de asociacion linea 40 o en el comando sql linea 37";
         }
-    } else {
-        echo "Error en el if de asociacion linea 40 o en el comando sql linea 37";
-    }
-?>
+        ?>
         <!--Fin  Bienvenido usuario-->
-        
-        
+
+
         <div class="cuadro_datos">
-        <div class="titulo_tus_datos">
-        <h1>Tus datos</h1>
-        <img src="../img/bienvenido.png" class="img_bienvenidos"><br><br><br>
-        </div>
-        <form action="update_cli.php" method="post">
-        <label class="cuadro_datos_modificar_label">Documento: </label>
-        <input class="inputs_modificar_tus_datos" readonly type="text" id="doc" name="doc" value="<?php echo $documento; ?>"><br><br>
+            <div class="titulo_tus_datos">
+                <h1>Tus datos</h1>
+                <img src="../img/bienvenido.png" class="img_bienvenidos"><br><br><br>
+            </div>
+            <form action="update_cli.php" method="post">
+                <label class="cuadro_datos_modificar_label">Documento: </label>
+                <input class="inputs_modificar_tus_datos" readonly type="text" id="doc" name="doc" value="<?php echo $documento; ?>"><br><br>
 
-        <label class="cuadro_datos_modificar_label">Nombres: </label>
-        <input class="inputs_modificar_tus_datos" type="text" id="nombre" name="nombre" value="<?php echo $name; ?>"><br><br>
+                <label class="cuadro_datos_modificar_label">Nombres: </label>
+                <input class="inputs_modificar_tus_datos" type="text" id="nombre" name="nombre" value="<?php echo $name; ?>"><br><br>
 
-        <label class="cuadro_datos_modificar_label">Apellidos: </label>
-        <input class="inputs_modificar_tus_datos" type="text" id="apellido" name="apellido" value="<?php echo $last_name; ?>"><br><br>
+                <label class="cuadro_datos_modificar_label">Apellidos: </label>
+                <input class="inputs_modificar_tus_datos" type="text" id="apellido" name="apellido" value="<?php echo $last_name; ?>"><br><br>
 
-        <label class="cuadro_datos_modificar_label">Correo: </label>
-        <input class="inputs_modificar_tus_datos" type="text" id="email" name="email" value="<?php echo $email; ?>"><br><br>
+                <label class="cuadro_datos_modificar_label">Correo: </label>
+                <input class="inputs_modificar_tus_datos" type="text" id="email" name="email" value="<?php echo $email; ?>"><br><br>
 
-        <label class="cuadro_datos_modificar_label">Numero : </label>
-        <input class="inputs_modificar_tus_datos" type="text" id="numero" name="numero" value="<?php echo $celular; ?>"><br><br>
+                <label class="cuadro_datos_modificar_label">Numero : </label>
+                <input class="inputs_modificar_tus_datos" type="text" id="numero" name="numero" value="<?php echo $celular; ?>"><br><br>
 
-        <label class="cuadro_datos_modificar_label">Direccion: </label>
-        <input class="inputs_modificar_tus_datos" type="text" id="direccion" name="direccion" value="<?php echo $direccion; ?>"><br><br><br><br>
+                <label class="cuadro_datos_modificar_label">Direccion: </label>
+                <input class="inputs_modificar_tus_datos" type="text" id="direccion" name="direccion" value="<?php echo $direccion; ?>"><br><br><br><br>
 
-        <input class="boton_finalizar_datos" type="submit" id="" name="" value="Finalizar">
-        </form>
+                <input class="boton_finalizar_datos" type="submit" id="" name="" value="Finalizar">
+            </form>
 
-        <form action="mi_cuenta_cli.php" method="post">
-            <input class="boton_concelar_datos" type="submit" id="" name="" value="Cancelar"></form>
+            <form action="mi_cuenta_cli.php" method="post">
+                <input class="boton_concelar_datos" type="submit" id="" name="" value="Cancelar">
+            </form>
         </div>
 
         <!-- Fin mi cuenta -->
-        
+
         <!-- Inicio boton whatsapp -->
-    <a href="https://api.whatsapp.com/send?phone=573054272142&text=Hola!%20tengo%20una%20duda!"  target="_blank"><img src="../img/whatsapp.webp" class="whatsapp"></a>
-      <!-- Fin boton whatsapp -->
+        <a href="https://api.whatsapp.com/send?phone=573054272142&text=Hola!%20tengo%20una%20duda!" target="_blank"><img src="../img/whatsapp.webp" class="whatsapp"></a>
+        <!-- Fin boton whatsapp -->
 
     </div>
     </div>
@@ -148,4 +148,5 @@ if (!isset($_SESSION['usuario'])) {
     <!--Fin de pie de pagina-->
 
 </body>
+
 </html>

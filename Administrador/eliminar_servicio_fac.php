@@ -1,17 +1,17 @@
 <?php
 session_start();
 if (!isset($_SESSION['admin'])) {
-    # code...
-    echo ' 
+  # code...
+  echo ' 
     <script>
     alert("Por favor debes iniciar sesion");
     window.location = "../../login1.php";
     </script>
     ';
-    
-    session_destroy();
-    //header("location:../login1.php");
-    //die();
+
+  session_destroy();
+  //header("location:../login1.php");
+  //die();
 }
 
 include('../conecta.php');
@@ -31,6 +31,3 @@ if (mysqli_query($conn, $sql)) {
 }
 
 mysqli_close($conn);
-
-
-?>

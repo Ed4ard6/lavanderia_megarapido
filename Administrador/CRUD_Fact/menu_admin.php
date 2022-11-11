@@ -7,14 +7,12 @@ if (!isset($_SESSION['admin'])) {
     # code...
     ?>
     <script>
-    alert("verificacion de problema facturas");
-    window.location = "listafacturas.php";
+    alert("Por favor debes iniciar sesion");
+    window.location = "../../login1.php";
     </script>
     <?php
-    
-    
-
-}
+    session_destroy();
+    }
 
 ?>
 

@@ -8,13 +8,16 @@ $correo = $_POST['email'];
 $num_celular = $_POST['numero'];
 $direccion = $_POST['direccion'];
 
-$sql="UPDATE usuarios SET  nombres='$nombres',apellidos='$apellidos', 
+$sql = "UPDATE usuarios SET  nombres='$nombres',apellidos='$apellidos', 
 correo = '$correo', num_celular = '$num_celular', direccion = '$direccion'  WHERE documento = $documento";
-$query=mysqli_query($conn,$sql);
+$query = mysqli_query($conn, $sql);
 
-    if($query){
-        Header("Location:mi_cuenta_cli.php");
-    }
-
+if ($query) {
+?>
+    <script>
+        window.location = "mi_cuenta_cli.php";
+    </script>
+<?php
+}
 
 ?>

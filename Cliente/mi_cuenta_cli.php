@@ -8,16 +8,15 @@ if (!isset($_SESSION['usuario'])) {
     window.location = "../login1.php";
     </script>
     ';
-    
+
     session_destroy();
-    //header("location:../login.html");
-    //die();
 }
 
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -31,81 +30,81 @@ if (!isset($_SESSION['usuario'])) {
     <link rel="shortcut icon" href="../img/icono.png">
     <title>Lavandería Mega Rápido</title>
 </head>
+
 <body>
-    
+
     <!-- Inicio de Codigo de Menu Cliente-->
-        <nav class="menu">
-            <label class="titulo">Lavanderia Mega Rapido</label>
-            <ul>
-                <li><a href="mi_cuenta_cli.php" class="activo">Mi Cuenta</a></li>
-                <li><a href="Servicios_Cliente.php">Solicitar Servicio</a></li>
-                <li><a href="lista_facturas_cli.php">Facturas</a></li>
-                <li><a href="cerrar_sesion.php">Cerrar Sesión</a></li>
-            </ul>
-        </nav>
-        <!--Inicio de codigo de menu Cliente-->
-        <div class="Contenedor_principal"> 
+    <nav class="menu">
+        <label class="titulo">Lavanderia Mega Rapido</label>
+        <ul>
+            <li><a href="mi_cuenta_cli.php" class="activo">Mi Cuenta</a></li>
+            <li><a href="Servicios_Cliente.php">Solicitar Servicio</a></li>
+            <li><a href="lista_facturas_cli.php">Facturas</a></li>
+            <li><a href="cerrar_sesion.php">Cerrar Sesión</a></li>
+        </ul>
+    </nav>
+    <!--Inicio de codigo de menu Cliente-->
+    <div class="Contenedor_principal">
         <!-- Inicio Mi cuenta -->
 
         <!--Inicio  Bienvenido usuario-->
-                
-                <?php
-               
-               $_SESSION['documento'];
-               $documento = $_SESSION['documento'];
 
-               require '../conecta.php';
+        <?php
 
-               $sql = "SELECT * FROM usuarios WHERE documento = '$documento'; ";
-               $result = mysqli_query($conn, $sql);
-               
-               if (mysqli_num_rows($result) > 0) {
-                   // output data of each row
-                   while($row = mysqli_fetch_assoc($result)) {
-                   $name = $row["nombres"];
-                   $last_name = $row["apellidos"];
-                   $email = $row["correo"];
-                   $celular = $row["num_celular"];
-                   $direccion = $row["direccion"];
+        $_SESSION['documento'];
+        $documento = $_SESSION['documento'];
 
-                   }
-               } else {
-                   echo "Error en el if de asociacion linea 40 o en el comando sql linea 37";
-               }
-           ?>
-        
+        require '../conecta.php';
+
+        $sql = "SELECT * FROM usuarios WHERE documento = '$documento'; ";
+        $result = mysqli_query($conn, $sql);
+
+        if (mysqli_num_rows($result) > 0) {
+            // output data of each row
+            while ($row = mysqli_fetch_assoc($result)) {
+                $name = $row["nombres"];
+                $last_name = $row["apellidos"];
+                $email = $row["correo"];
+                $celular = $row["num_celular"];
+                $direccion = $row["direccion"];
+            }
+        } else {
+            echo "Error en el if de asociacion linea 40 o en el comando sql linea 37";
+        }
+        ?>
+
         <!--Fin  Bienvenido usuario-->
-        
+
         <div class="cuadro_datos">
-        <div class="bienvenido">
-        <h1>Bienvenid@  <br> <br><?php echo $name. " " . $last_name; ?> </h1><br>
-        <img src="../img/bienvenido.png" class="img_bienvenidos">
+            <div class="bienvenido">
+                <h1>Bienvenid@ <br> <br><?php echo $name . " " . $last_name; ?> </h1><br>
+                <img src="../img/bienvenido.png" class="img_bienvenidos">
+            </div>
+
+            <label class="cuadro_datos_label"><b>Documento :</b> </label><label class="cuadro_datos_label_label"><?php echo $documento; ?></label><br><br>
+
+            <label class="cuadro_datos_label"><b>Nombres :</b></label><label class="cuadro_datos_label_label"><?php echo $name; ?></label><br><br>
+
+            <label class="cuadro_datos_label"><b>Apelidos : </b></label><label class="cuadro_datos_label_label"><?php echo $last_name; ?></label><br><br>
+
+            <label class="cuadro_datos_label"><b> Correo :</b> </label><label class="cuadro_datos_label_label"><?php echo $email; ?></label><br><br>
+
+            <label class="cuadro_datos_label"><b> Numero :</b> </label><label class="cuadro_datos_label_label"><?php echo $celular; ?></label><br><br>
+
+            <label class="cuadro_datos_label"><b> Direccion :</b> </label><label class="cuadro_datos_label_label"><?php echo $direccion; ?></label><br><br><br>
+
+
+            <form action="modificar_datos_cli.php" method="post">
+                <input class="boton_modificar_datos" type="submit" value="Modificar datos">
         </div>
-    
-        <label class="cuadro_datos_label"><b>Documento :</b>  </label><label class="cuadro_datos_label_label"><?php echo $documento; ?></label><br><br>
 
-        <label class="cuadro_datos_label"><b>Nombres   :</b></label><label class="cuadro_datos_label_label"><?php echo $name; ?></label><br><br>
-
-        <label class="cuadro_datos_label"><b>Apelidos  : </b></label><label class="cuadro_datos_label_label"><?php echo $last_name; ?></label><br><br>
-
-        <label class="cuadro_datos_label"><b> Correo    :</b> </label><label class="cuadro_datos_label_label"><?php echo $email; ?></label><br><br>
-
-        <label class="cuadro_datos_label"><b> Numero    :</b> </label><label class="cuadro_datos_label_label"><?php echo $celular; ?></label><br><br>
-
-        <label class="cuadro_datos_label"><b> Direccion :</b> </label><label class="cuadro_datos_label_label"><?php echo $direccion; ?></label><br><br><br>
-      
-    
-        <form action="modificar_datos_cli.php" method="post">
-            <input class="boton_modificar_datos" type="submit" value="Modificar datos">
-        </div>
-        
         <!-- Fin mi cuenta -->
-       <!-- Inicio boton whatsapp -->
-    <a href="https://api.whatsapp.com/send?phone=573054272142&text=Hola!%20tengo%20una%20duda!"  target="_blank"><img src="../img/whatsapp.webp" class="whatsapp"></a>
-      <!-- Fin boton whatsapp -->
+        <!-- Inicio boton whatsapp -->
+        <a href="https://api.whatsapp.com/send?phone=573054272142&text=Hola!%20tengo%20una%20duda!" target="_blank"><img src="../img/whatsapp.webp" class="whatsapp"></a>
+        <!-- Fin boton whatsapp -->
     </div>
     </div>
-    
+
     <!--Inicio de pie de pagina-->
     <footer class="pie-pagina">
         <div class="grupo-1">
@@ -137,4 +136,5 @@ if (!isset($_SESSION['usuario'])) {
     <!--Fin de pie de pagina-->
 
 </body>
+
 </html>

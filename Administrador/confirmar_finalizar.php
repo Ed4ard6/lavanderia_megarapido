@@ -26,6 +26,3 @@ window.location="CRUD_Fact/listafacturas.php"
 }
 
 mysqli_close($conn);
-
-
-?>

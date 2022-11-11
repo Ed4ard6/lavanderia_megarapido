@@ -14,8 +14,7 @@ if (!isset($_SESSION['admin'])) {
     ';
     
     session_destroy();
-    //header("location:../login1.php");
-    //die();
+
 }
 
 ?>
@@ -61,7 +60,7 @@ if (!isset($_SESSION['admin'])) {
                 <?php
                 include ("../../conecta.php");
 
-                $sql="SELECT * FROM servicios";
+                $sql="SELECT * FROM servicios WHERE estado = 'Activo'";
                 $result=mysqli_query($conn,$sql);
 
                 while($mostrar=mysqli_fetch_array($result)){

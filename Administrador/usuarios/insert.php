@@ -1,6 +1,7 @@
 <?php include('menu_admin.php');  ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,23 +9,24 @@
     <link rel="stylesheet" href="css/estilos.css">
     <title>Document</title>
 </head>
+
 <body>
-<?php 
+    <?php
     //cuado le de clik en el boton de guardar ejecutar la accion
-    if(isset($_POST['guardar'])){
+    if (isset($_POST['guardar'])) {
         //creo variables
-        $documento=mysqli_real_escape_string($conn, (strip_tags($_POST["documento"], ENT_QUOTES)));
-        $nombre=mysqli_real_escape_string($conn, (strip_tags($_POST["nombre"], ENT_QUOTES)));
-        $apellido=mysqli_real_escape_string($conn, (strip_tags($_POST["apellido"], ENT_QUOTES)));
-        $usuario=mysqli_real_escape_string($conn, (strip_tags($_POST["usuario"], ENT_QUOTES)));
-        $contraseña=mysqli_real_escape_string($conn, (strip_tags($_POST["contraseña"], ENT_QUOTES)));
-        $correo=mysqli_real_escape_string($conn, (strip_tags($_POST["correo"], ENT_QUOTES)));
-        $celular=mysqli_real_escape_string($conn, (strip_tags($_POST['celular'], ENT_QUOTES)));
-        $direccion=mysqli_real_escape_string($conn, (strip_tags($_POST['direccion'], ENT_QUOTES)));
+        $documento = mysqli_real_escape_string($conn, (strip_tags($_POST["documento"], ENT_QUOTES)));
+        $nombre = mysqli_real_escape_string($conn, (strip_tags($_POST["nombre"], ENT_QUOTES)));
+        $apellido = mysqli_real_escape_string($conn, (strip_tags($_POST["apellido"], ENT_QUOTES)));
+        $usuario = mysqli_real_escape_string($conn, (strip_tags($_POST["usuario"], ENT_QUOTES)));
+        $contraseña = mysqli_real_escape_string($conn, (strip_tags($_POST["contraseña"], ENT_QUOTES)));
+        $correo = mysqli_real_escape_string($conn, (strip_tags($_POST["correo"], ENT_QUOTES)));
+        $celular = mysqli_real_escape_string($conn, (strip_tags($_POST['celular'], ENT_QUOTES)));
+        $direccion = mysqli_real_escape_string($conn, (strip_tags($_POST['direccion'], ENT_QUOTES)));
 
         //validacion de documento que no se repita
-        $verificar_documento = mysqli_query($conn , "SELECT * FROM usuarios WHERE documento='$documento'");
-        if(mysqli_num_rows($verificar_documento)>0){
+        $verificar_documento = mysqli_query($conn, "SELECT * FROM usuarios WHERE documento='$documento'");
+        if (mysqli_num_rows($verificar_documento) > 0) {
             echo '
             <script>
             alert("Este documento ya fue registrado, intenta de nuevo");
@@ -32,8 +34,8 @@
             </script>';
         }
         //validacion de usuario que no se repita
-        $verificar_usuario = mysqli_query($conn , "SELECT * FROM usuarios WHERE usuario='$usuario'");
-        if(mysqli_num_rows($verificar_usuario)>0){
+        $verificar_usuario = mysqli_query($conn, "SELECT * FROM usuarios WHERE usuario='$usuario'");
+        if (mysqli_num_rows($verificar_usuario) > 0) {
             echo '
             <script>
             alert("Este usuario ya fue registrado, intenta de nuevo");
@@ -41,9 +43,9 @@
             </script>';
         }
         //almaceno las variable 
-        $insert=mysqli_query($conn, "INSERT INTO usuarios(documento, nombres, apellidos, usuario, contraseña, correo, num_celular, direccion) VALUES ('$documento','$nombre', '$apellido', '$usuario', '$contraseña', '$correo', '$celular', '$direccion')");
+        $insert = mysqli_query($conn, "INSERT INTO usuarios(documento, nombres, apellidos, usuario, contraseña, correo, num_celular, direccion) VALUES ('$documento','$nombre', '$apellido', '$usuario', '$contraseña', '$correo', '$celular', '$direccion')");
         //validacion 
-        if($insert){
+        if ($insert) {
             echo '
             <script>
             alert("Usuario creado correctamente");
@@ -92,9 +94,10 @@
                     <input type="submit" name="guardar" value="guardar" class="btn btn__primary">
                 </div>
         </form>
-</div>
+    </div>
     </div>
     </div>
 </body>
+
 </html>
 <?php include('pie_pagina.php'); ?>

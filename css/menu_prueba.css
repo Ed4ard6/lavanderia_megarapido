@@ -1,5 +1,4 @@
-
-.menu{
+.menu {
     background-color: rgb(26, 62, 102);
     height: 75px;
     width: 100%;
@@ -10,9 +9,10 @@
     box-shadow: 5px 0 10px rgba(0, 0, 0, .6);
     position: sticky;
     top: 0px;
-    
+
 }
-.titulo{
+
+.titulo {
     /* position: relative; */
     color: rgb(160, 158, 158);
     font-size: 30px;
@@ -20,52 +20,79 @@
     font-weight: bold;
     outline: none;
     animation: animate 5s linear infinite;
-    
+
 }
-@keyframes animate{
-    0%, 18%, 20%, 50.1%, 60%, 35.1%, 80%, 90.1%, 92%{
+
+@keyframes animate {
+
+    0%,
+    18%,
+    20%,
+    50.1%,
+    60%,
+    35.1%,
+    80%,
+    90.1%,
+    92% {
         color: rgb(255, 255, 255);
         text-shadow: none;
     }
-    18.1%, 20.1%, 30%, 50%, 60.1%, 65%, 80.1%, 90%, 92.1%, 100%{
+
+    18.1%,
+    20.1%,
+    30%,
+    50%,
+    60.1%,
+    65%,
+    80.1%,
+    90%,
+    92.1%,
+    100% {
         color: #fff;
         text-shadow: 0 0 10px #03bcf4,
-        0 0 20px #03bcf4,
-        0 0 40px #03bcf4,
-        0 0 80px #03bcf4,
-        0 0 160px #03bcf4;
+            0 0 20px #03bcf4,
+            0 0 40px #03bcf4,
+            0 0 80px #03bcf4,
+            0 0 160px #03bcf4;
     }
 }
-.menu ul{
+
+.menu ul {
     display: flex;
     list-style: none;
     margin-right: 30px;
-/* Codigo menu*/
+    /* Codigo menu*/
     list-style-type: none;
     margin: 0;
     padding: 0;
-    overflow: hidden;/*puede ser AUTO, VISIBLE, SCROLL O */
+    overflow: hidden;
+    /*puede ser AUTO, VISIBLE, SCROLL O */
     display: flex;
 }
 
-.menu li{
+.menu li {
     margin: 0 5px;
     right: 0;
     transition: 0.5s;
     float: left;
 }
-.menu a ,.dropbtn{
+
+.menu a,
+.dropbtn {
     text-decoration: none;
     font-size: 17px;
-    display: block;/* por aqui esta la vaina */
-    display:  inline-block;
+    display: block;
+    /* por aqui esta la vaina */
+    display: inline-block;
     color: white;
     text-align: center;
     padding: 14px 16px;
 }
+
 li.dropdown {
-    display:  inline-block;
+    display: inline-block;
 }
+
 .dropdown-content {
     display: none;
     position: absolute;
@@ -84,16 +111,19 @@ li.dropdown {
 }
 
 .dropdown-content a:hover {
-    background-color: #9c4848;/* este el el del puntero */
+    background-color: #9c4848;
+    /* este el el del puntero */
 }
 
 .dropdown:hover .dropdown-content {
     display: block;
 }
-.menu ul li:hover{
+
+.menu ul li:hover {
     background-color: green;
     /* border-bottom: 4px solid white; */
 }
-.activo{
+
+.activo {
     border-bottom: 3px solid white;
 }
