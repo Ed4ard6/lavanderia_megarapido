@@ -1,4 +1,4 @@
-<?php include('menu_admin.php');?>
+<?php include('./menu_admin.php');?>
     <!-- Inicio de Codigo de lista facturas-->
     <div class="contenedor_lista_facturas">
     <div class="titulo_lista_facturas">
@@ -16,6 +16,7 @@
                 </form>
             </div>
             <?php
+            //////////////////////////////////////////inicio boton buscar ////////////////////////////////////////////
             if (isset($_POST['buscar'])){
 
                 $id_factura = $_POST['id_fac'];
@@ -86,8 +87,8 @@
                 <td><?php echo $fila['documento']; ?></td>
                 <td><?php echo $fila['nombres']; ?></td>
                 <td><?php echo $fila['apellidos']; ?></td>
-                <td><a href="editar_factura.php?id=<?php echo $fila['id_factura']; ?>" class="boton_editar">Editar</a></td>
-                <td><a href="confirma_eli_factura.php?id_factura=<?php echo $fila['id_factura']; ?>" class="boton_eliminar">Eliminar</a></td>
+                <td><a href="update_factura.php?id=<?php echo $num_factura; ?>" class="boton_editar">Actualizar</a></td>
+                <td><a href="confirma_eli_factura.php?id_factura=<?php echo $num_factura; ?>" class="boton_eliminar">Eliminar</a></td>
                 <td><a href="ver_det_fac_adm.php?factura=<?php echo $num_factura; ?>"><img src="img_fac/ver_detalles_icono.webp" class="icono_ver_adm"></a></td>
                 </tr>
                 <?php
@@ -98,7 +99,7 @@
         <!-- Fin lista de facturas -->
                 <?php
                 }
-
+//////////////////////////////fin boton Buscar //////////////////////////////////////////
             }else{
                 ?>
                 <table class="table">

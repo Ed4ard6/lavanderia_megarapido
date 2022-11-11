@@ -1,19 +1,13 @@
 <?php
 session_start();
 if (!isset($_SESSION['admin'])) {
-    # code...
-    echo ' 
-    <script>
+
+    ?><script>
     alert("Por favor debes iniciar sesion");
     window.location = "../login1.php";
-    </script>
-    ';
+    </script><?php
     
     session_destroy();
-    //header("location:../login1.php");
-    //die();
-    $_SESSION['documento'];
-    $documento = $_SESSION['documento'];
 }
 
 

@@ -13,6 +13,9 @@ correo = '$correo', num_celular = '$num_celular', direccion = '$direccion'  WHER
 $query=mysqli_query($conn,$sql);
 
     if($query){
+        ?><script>
+    window.location = "Location:mi_cuenta_admi.php";
+    </script><?php
         Header("Location:mi_cuenta_admi.php");
     }
 

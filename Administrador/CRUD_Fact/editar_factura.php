@@ -1,8 +1,6 @@
-
-
 <?php include('menu_admin.php');
 
-$idfactura=$_GET['id'];
+$idfactura=$_REQUEST['id'];
 
 $sql="SELECT * FROM factura WHERE id_factura='$idfactura'";
 $query=mysqli_query($conn,$sql);
