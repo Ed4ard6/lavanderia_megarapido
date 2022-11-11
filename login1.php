@@ -19,7 +19,7 @@
                                     <option value="C">Cliente</option>
                                     <option value="A">Administrador</option>
                                 </select>
-                                <p class="olvidar_contraseña"> <a href="recuperar_contraseñas.php">¿Olvidaste la Contraseña?</a> </p>
+                                <p class="olvidar_contraseña"> <a href="recuperar_contrasenas.php">¿Olvidaste la Contraseña?</a> </p>
                             <input class="boton_login" type="submit" id="enviar" name="enviar" value="Enviar">    
                             </div><br>
                         </form>

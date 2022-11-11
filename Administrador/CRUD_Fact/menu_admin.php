@@ -1,21 +1,19 @@
 <?php
 session_start();
+session_start();
 include('../../conecta.php');
 
 if (!isset($_SESSION['admin'])) {
     # code...
-    echo ' 
+    ?>
     <script>
-    alert("Por favor debes iniciar sesion");
-    window.location = "../../login1.php";
+    alert("verificacion de problema facturas");
+    window.location = "listafacturas.php";
     </script>
-    ';
+    <?php
     
-    session_destroy();
-    //header("location:../login1.php");
-    //die();
-    $_SESSION['documento'];
-    $documento = $_SESSION['documento'];
+    
+
 }
 
 ?>

@@ -4,7 +4,7 @@
             <h1>Recuperar contraseña</h1>
         </div>
                 <div class="cuerpo_recuperar_contraseña">
-                    <form action="recuperar_contraseña.php" method="post">
+                    <form action="recuperar_contrasena.php" method="post">
                         <div class="imglogin" >
                             <img src="img/claverec.png"><br><br><br>
                         </div>

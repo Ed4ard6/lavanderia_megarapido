@@ -2,7 +2,7 @@
 
     <div class="contenedor_recuperar">
         <h1>Recuperar contraseña</h1>
-        <form action="recuperar_contraseña.php" method="post">
+        <form action="recuperar_contrasena.php" method="post">
             <div class="grupo">
                 <label for="documento">Numero de documento:</label>
                 <input type="number" name="documento" id="documento" placeholder="Ingresar documento">

@@ -382,3 +382,40 @@ footer{
     margin-right: 30px;
     width: 300px;
 }
+
+/*****************************************confirmar eliminar usuario inicio **********/
+.confi_elimi_usu{
+    font-size: x-large;
+    margin: 5% 35% 0% 35%;
+    padding: 2% 5% 2% 5%;
+    height: 65%;
+    width: 25%;
+    border: solid black 2px;
+    border-radius: 15px;
+    background-color: rgb(240, 212, 167);
+}
+.botones_confir_delete{
+    text-align: center;
+    height: 10%;
+    width: 100%;
+    padding: 0% 5% 5% 5%;
+}
+.cancel{
+    background: #8a0505  ;
+    color: rgb(241, 235, 235);
+    width: 45%;
+    height: 45px;
+    font-size: large;
+    border-radius: 15px;
+    
+}
+
+.confir{
+    background: #02961a ;
+    color: rgb(241, 235, 235);
+    width: 45%;
+    height: 45px;
+    font-size: large;
+    border-radius: 15px;
+
+}

@@ -92,8 +92,17 @@ form .btn{
 .btn__primary{
     background: rgb(3, 113, 163);
 }
-.btn__danger{
-    background: #8a0505 !important;
+.cancelar{
+    background: #8a0505  ;
+    color: rgb(241, 235, 235);
+    width: 100px;
+    font-size: large;
+}
+.btn__confir{
+    background: #02961a ;
+    color: rgb(241, 235, 235);
+    width: 100px;
+    font-size: large;
 }
 
 
