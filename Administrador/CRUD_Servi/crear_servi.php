@@ -13,8 +13,6 @@ if (!isset($_SESSION['admin'])) {
     ';
     
     session_destroy();
-    //header("location:../login1.php");
-    //die();
 }
 
  ?>
