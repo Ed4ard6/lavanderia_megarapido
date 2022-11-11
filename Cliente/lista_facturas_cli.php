@@ -5,13 +5,11 @@ if (!isset($_SESSION['usuario'])) {
     echo ' 
     <script>
     alert("Por favor debes iniciar sesion");
-    window.location = "../login.html";
+    window.location = "../login1.php";
     </script>
     ';
     
     session_destroy();
-    //header("location:../login.html");
-    //die();
 }
 
 ?>

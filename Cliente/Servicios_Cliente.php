@@ -13,8 +13,6 @@ if (!isset($_SESSION['usuario'])) {
     ';
     
     session_destroy();
-    //header("location:../login1.php");
-    //die();
 }
 
 include("consulta_database.php");

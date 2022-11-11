@@ -13,8 +13,11 @@ correo = '$correo', num_celular = '$num_celular', direccion = '$direccion'  WHER
 $query=mysqli_query($conn,$sql);
 
     if($query){
-        Header("Location:mi_cuenta_cli.php");
+        ?>
+        <script>
+        window.location = "mi_cuenta_cli.php";
+        </script>
+        <?php
     }
-
 
 ?>
